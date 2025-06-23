@@ -1,95 +1,75 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Image from "next/image"
+import Link from "next/link"
+import styles from "./page.module.css"
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <>
+      <section className={styles.hero}>
+        <div className="container">
+          <div className={styles.heroContent}>
+            <div className={styles.heroText}>
+              <h1 className={styles.heroTitle}>
+                Bonjour, je suis <span className={styles.highlight}>Développeur Web</span>
+              </h1>
+              <p className={styles.heroDescription}>
+                Passionné par la création d'expériences web modernes et performantes. Je transforme vos idées en
+                solutions digitales innovantes.
+              </p>
+              <div className={styles.heroButtons}>
+                <Link href="/projects" className="btn">
+                  Voir mes projets
+                </Link>
+                <Link href="/contact" className="btn btn-secondary">
+                  Me contacter
+                </Link>
+              </div>
+            </div>
+            <div className={styles.heroImage}>
+              <Image
+                src="/placeholder.svg?height=400&width=400"
+                alt="Photo de profil"
+                width={400}
+                height={400}
+                className={styles.profileImage}
+                priority
+              />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <h2 className="section-title">Mes Compétences</h2>
+          <div className="grid grid-3">
+            <div className="card">
+              <h3 className={styles.skillTitle}>Frontend</h3>
+              <p>React, Next.js, JavaScript, HTML5, CSS3, Vue.js</p>
+            </div>
+            <div className="card">
+              <h3 className={styles.skillTitle}>Backend</h3>
+              <p>Node.js, Express, Python, API REST, Bases de données</p>
+            </div>
+            <div className="card">
+              <h3 className={styles.skillTitle}>Outils</h3>
+              <p>Git, Docker, AWS, Vercel, Figma, VS Code</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.cta}>
+        <div className="container">
+          <h2 className={styles.ctaTitle}>Prêt à collaborer ?</h2>
+          <p className={styles.ctaText}>
+            Discutons de votre prochain projet et créons quelque chose d'extraordinaire ensemble.
+          </p>
+          <Link href="/contact" className="btn">
+            Commençons
+          </Link>
+        </div>
+      </section>
+    </>
+  )
 }

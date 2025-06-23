@@ -1,0 +1,90 @@
+.aboutPage {
+  padding-top: 70px;
+}
+
+.aboutContent {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.aboutText {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.subtitle {
+  color: #3498db;
+  margin: 2rem 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.valuesList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.valuesList li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.valuesList li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.aboutImage {
+  text-align: center;
+}
+
+.image {
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.experienceSection {
+  background-color: white;
+}
+
+.timeline {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.timelineDate {
+  font-weight: 600;
+  color: #3498db;
+  font-size: 1.1rem;
+}
+
+.timelineContent h3 {
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .aboutContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .timelineItem {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
